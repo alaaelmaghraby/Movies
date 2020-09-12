@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         rv_movies.adapter = moviesAdapter
         rv_movies.layoutManager = llm
         getPopularMovies()
+        // This is in development branch
     }
 
     fun getPopularMovies(){
