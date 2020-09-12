@@ -28,11 +28,6 @@ class MainActivity : AppCompatActivity() {
         rv_movies.adapter = moviesAdapter
         rv_movies.layoutManager = llm
         getPopularMovies()
-
-        //rv_movies.adapter = MoviesAdapter()
-//        rv_movies.layoutManager = LinearLayoutManager(this,
-//            LinearLayoutManager.VERTICAL,
-//            false)
     }
 
     fun getPopularMovies(){
