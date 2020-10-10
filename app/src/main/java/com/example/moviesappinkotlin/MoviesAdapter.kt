@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import kotlinx.android.synthetic.main.card_movie.view.*
-class MoviesAdapter(private var moviesList: MutableList<Movie>?) :
+class MoviesAdapter(private var moviesList: MutableList<Movie>?, var listener : movieListener) :
     RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
-    class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    interface movieListener{
+        fun onClick(m:Movie)
+    }
+    inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun onBind(movie: Movie) {
             itemView.item_movie_release_date.text = movie.releaseDate
             itemView.item_movie_rating.text = movie.rating.toString()
@@ -18,6 +21,9 @@ class MoviesAdapter(private var moviesList: MutableList<Movie>?) :
                 .load("https://image.tmdb.org/t/p/w342${movie.posterPath}")
                 .transform(CenterCrop())
                 .into(itemView.item_movie_poster)
+            itemView.setOnClickListener {
+                listener.onClick(movie)
+            }
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder

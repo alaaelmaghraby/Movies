@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieDetails">
+
+
+    <ImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="250dp"
+        android:layout_height="350dp"
+        android:paddingTop="20dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="20dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_releaseDatetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginTop="100dp"
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@id/moviePoster"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Released:"
+        />
+
+    <TextView
+        android:id="@+id/tv_releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Release Date"
+
+        android:textSize="17sp"
+        app:layout_constraintStart_toEndOf="@id/moviePoster"
+        app:layout_constraintTop_toBottomOf="@id/tv_releaseDatetext"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_Ratingtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rated:"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toStartOf="@id/tv_Rating"
+        app:layout_constraintStart_toEndOf="@id/moviePoster"
+        app:layout_constraintTop_toBottomOf="@id/tv_releaseDate"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/tv_Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="rating"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_Ratingtext"
+        app:layout_constraintTop_toBottomOf="@id/tv_releaseDate"
+        android:drawableEnd="@drawable/ic_star"
+        android:drawablePadding="2dp"
+        android:layout_marginTop="30dp"
+        />
+
+
+         />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:elevation="4dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="4dp"
+        app:layout_constraintTop_toBottomOf="@id/moviePoster">
+
+
+
+        <TextView
+            android:id="@+id/tv_movieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="name"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@id/card"
+            app:layout_constraintTop_toTopOf="@id/card"
+            app:layout_constraintBottom_toTopOf="@id/tv_overView"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_overView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="overview"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/card"
+            app:layout_constraintTop_toBottomOf="@id/tv_movieName"
+            android:padding="20dp"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
